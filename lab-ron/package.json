@@ -1,0 +1,11 @@
+{
+  "name": "todo",
+  "version": "0.0.1",
+  "description": "Lab 28, ToDo, in React",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "ronbarrantes",
+  "license": "MIT"
+}
