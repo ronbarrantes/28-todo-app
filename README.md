@@ -20,6 +20,8 @@ Your lab directory must include
 * **package.json** -- with all dependencies and dev-dependencies 
 * **webpack.config.js** -- with webpack config
 * **src/** -- containing the front end code
+* **src/\_\_test\_\_** -- containing the front end tests
+* **src/component** -- containing react components
 * **src/main.js** -- containing the entire app
 * **src/style** -- containing your sass
 * **src/style/main.scss** -- for importing and including reset and base
