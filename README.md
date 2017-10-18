@@ -26,12 +26,12 @@
 
  
 ## Feature Tasks 
-Create the following components and structure them according to the following diagram.  
+the following components and structure them according to the following diagram.  
 ``` 
 App
   Landing
   Dashboard
-    NoteCreateForm
+    NoteForm
     NoteList
       Noteitem
 ```
@@ -69,7 +69,7 @@ App
 ## Test
 * Test Dasboard
   * Test the intial state
-* Test NoteCreateForm
+* Test NoteForm
   * Test the intial state
 
 ##  Documentation  
