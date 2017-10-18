@@ -9,9 +9,7 @@
   * Submit a link to your pull request on canvas
   * Submit a question, observation, and how long you spent on canvas  
 
-## Requirements  
-#### Configuration  
-Your lab directory must include  
+## Configuration    
 * **README.md** -- with a documention about your lab
 * **.babelrc** -- with all dependencies and dev-dependencies 
 * **.eslintrc** -- with the class .eslintrc file
@@ -27,7 +25,7 @@ Your lab directory must include
 * **src/style/main.scss** -- for importing and including reset and base
 
  
-#### Feature Tasks 
+## Feature Tasks 
 Create the following components and structure them according to the following diagram.  
 ``` 
 App
@@ -37,15 +35,15 @@ App
     NoteList
       Noteitem
 ```
-###### App
+#### App
 * The app component should manage the fronted routes and have a navbar
 * the `/` route should display the `Landing` component
 * the `/dashboard` route should display the `Dashboard` component
 
-###### Landing
+#### Landing
 * The landing compoent should display a brief description of the notes app
 
-###### Dashboard Component 
+#### Dashboard Component 
 * The dasboard component should manage the entire **application state**. 
 * The state should contain a notes array
 * It should have a bound `addNote(note)` method that adds a note to `state.notes`
@@ -57,22 +55,22 @@ App
     * `title`: user provided title
 * It should have a bound `removeNote(note)` method that removes a note from `state.notes` based on its `id`
 
-###### NoteForm Component
+#### NoteForm Component
 * `onComplete` the NoteForm should add a note to the application state
 
-###### NoteList Component 
+#### NoteList Component 
 * should display an unordered list of NoteItem components
 
-###### NoteItem
+#### NoteItem
 * should display the notes content and title
 * should display a delete button
   * `onClick` the note should be removed from the application state
 
-#### Test
+## Test
 * Test Dasboard
   * Test the intial state
 * Test NoteCreateForm
   * Test the intial state
 
-####  Documentation  
+##  Documentation  
 Write a description of the project in your README.md
