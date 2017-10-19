@@ -10,13 +10,15 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <header>
-              <h1>ToDo</h1>
-              <ul>
-                <li><Link to='/'>home</Link></li>
-                <li><Link to='/dashboard'>dashboard</Link></li>
-              </ul>
+              <h1>Task Tracker</h1>
+              <nav>
+                <ul>
+                  <li><Link to='/'>home</Link></li>
+                  <li><Link to='/dashboard'>dashboard</Link></li>
+                </ul>
+              </nav>
             </header>
-            <Route exact path='/' component={() => <p>Welcome to the todo tracker</p>} />
+            <Route exact path='/' component={() => <p>Welcome to the task tracker</p>} />
             <Route exact path='/dashboard' component={Dashboard} />
 
           </div>

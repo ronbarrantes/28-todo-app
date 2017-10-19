@@ -1,7 +1,7 @@
 {
-  "name": "todo",
+  "name": "task",
   "version": "0.0.1",
-  "description": "Lab 28, ToDo, in React",
+  "description": "Lab 28-29, Task Tracker, in React",
   "scripts": {
     "watch": "webpack-dev-server --inline --hot",
     "test": "jest"

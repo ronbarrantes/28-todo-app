@@ -1,7 +1,7 @@
 import React from 'react'
 import uuid from 'uuid/v1'
-import ToDoForm from '../todo-form'
-import ToDoList from '../todo-list'
+import TaskForm from '../task-form'
+import TaskList from '../task-list'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -32,8 +32,8 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <ToDoForm onComplete={this.addTask} />
-        {<ToDoList />}
+        <TaskForm onComplete={this.addTask} />
+        {<TaskList />}
       </div>
     )
   }

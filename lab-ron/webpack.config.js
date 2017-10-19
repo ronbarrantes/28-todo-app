@@ -17,7 +17,7 @@ module.exports = {
 
   plugins: [
     new HTMLPlugin({
-      title: 'ToDo App',
+      title: 'Task Tracker App',
     }),
     new ExtractPlugin('bundle.[hash].css'),
   ],

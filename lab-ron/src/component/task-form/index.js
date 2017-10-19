@@ -1,10 +1,10 @@
 import React from 'react'
 
-class ToDoForm extends React.Component {
+class TaskForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      todo: '',
+      task: '',
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -20,7 +20,7 @@ class ToDoForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     this.props.onComplete(this.state)
-    this.setState({ todo: '' })
+    this.setState({ task: '' })
   }
 
   render() {
@@ -28,22 +28,22 @@ class ToDoForm extends React.Component {
 
     return (
       <form
-        className='todo-form'
+        className='task-form'
         onSubmit={this.handleSubmit}
       >
         <input
           type='text'
-          name='todo'
+          name='task'
           placeholder='To Do'
-          value={this.state.todo}
+          value={this.state.task}
           onChange={this.handleChange}
         />
 
-        <button type='submit'>Add ToDo</button>
+        <button type='submit'>Add Task</button>
       </form>
     )
 
   }
 }
 
-export default ToDoForm
+export default TaskForm
