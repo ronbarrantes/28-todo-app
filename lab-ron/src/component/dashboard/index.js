@@ -24,16 +24,23 @@ class Dashboard extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log('STATE:', this.state)
+    console.log('__STATE__:', this.state)
   }
 
-  removeTask() { }
+  removeTask(task) {
+    // this.state = task.filter()
+    console.log({ task })
+
+    this.setState(prevState => ({
+      tasks: prevState.tasks.filter(item => task.id !== item.id),
+    }))
+  }
 
   render() {
     return (
       <div>
         <TaskForm onComplete={this.addTask} />
-        {<TaskList />}
+        <TaskList tasks={this.state.tasks} removeTask={this.removeTask} />
       </div>
     )
   }
