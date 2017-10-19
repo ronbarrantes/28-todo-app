@@ -25,9 +25,6 @@ class Dashboard extends React.Component {
 
   // }
 
-  componentDidMount() {
-    this.addTask({ todo: 'Buy Eggs', completed: false })
-  }
 
 
   componentDidUpdate() {

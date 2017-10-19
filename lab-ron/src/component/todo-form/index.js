@@ -40,7 +40,6 @@ class ToDoForm extends React.Component {
           onChange={this.handleChange}
         />
 
-
         <button type='submit'>Add ToDo</button>
       </form>
     )

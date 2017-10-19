@@ -15,7 +15,7 @@ class App extends React.Component {
                 <li><Link to='/dashboard'>dashboard</Link></li>
               </ul>
             </header>
-            <Route exact path='/' component={() => <h1>Landing Page</h1>} />
+            <Route exact path='/' component={() => <p>Welcome to the todo tracker</p>} />
             <Route exact path='/dashboard' component={Dashboard} />
 
           </div>
