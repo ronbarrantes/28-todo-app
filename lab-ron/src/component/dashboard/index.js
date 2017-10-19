@@ -1,6 +1,7 @@
 import React from 'react'
 import uuid from 'uuid/v1'
 import ToDoForm from '../todo-form'
+import ToDoList from '../todo-list'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -10,33 +11,29 @@ class Dashboard extends React.Component {
     }
 
     this.addTask = this.addTask.bind(this)
-    // this.removeTask = this.removeTask.bind(this)
+    this.removeTask = this.removeTask.bind(this)
   }
 
   addTask(task) {
     task.created = new Date()
+    task.completed = false
     task.id = uuid()
     this.setState(prevState => ({
       tasks: [...prevState.tasks, task],
     }))
   }
 
-  // removeNote(id){
-
-  // }
-
-
-
   componentDidUpdate() {
     console.log('STATE:', this.state)
   }
 
-  // removeTask() { }
+  removeTask() { }
 
   render() {
     return (
       <div>
-        <ToDoForm onComplete={this.addTask}/>
+        <ToDoForm onComplete={this.addTask} />
+        {<ToDoList />}
       </div>
     )
   }

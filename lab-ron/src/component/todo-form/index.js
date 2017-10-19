@@ -5,7 +5,6 @@ class ToDoForm extends React.Component {
     super(props)
     this.state = {
       todo: '',
-      completed: false,
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -21,7 +20,7 @@ class ToDoForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     this.props.onComplete(this.state)
-    this.setState({ todo: '', completed: 'false' })
+    this.setState({ todo: '' })
   }
 
   render() {
