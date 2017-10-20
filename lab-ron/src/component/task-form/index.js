@@ -15,14 +15,15 @@ class TaskForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.task)
+    if (nextProps.task) {
       this.setState(nextProps.task)
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault()
     this.props.onComplete(this.state)
-    this.setState({ emptyState })
+    this.setState(emptyState)
     console.log('RESET FORM')
   }
 

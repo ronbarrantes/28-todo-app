@@ -7,12 +7,12 @@ let modalStyles = (props) => ({
   width: '100%',
   height: '100%',
   display: props.show ? 'block' : 'none',
-  background: 'blue',
+  background: 'rgba(0,0,0,.5)',
 })
-/// Styles not working 
+
 let modalMainStyles = {
   position: 'fixed',
-  background: 'rgba(0,0,0,.5)',
+  background: '#fff',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
