@@ -1,14 +1,29 @@
 import React from 'react'
 
+let emptyState = {
+  task: '',
+}
+
 class TaskForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      task: '',
-    }
+    let { task } = props
+    this.state = task ? task : emptyState
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.task)
+      this.setState(nextProps.task)
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    this.props.onComplete(this.state)
+    this.setState({ emptyState })
+    console.log('RESET FORM')
   }
 
   handleChange(e) {
@@ -17,15 +32,8 @@ class TaskForm extends React.Component {
     this.setState({ [name]: value })
   }
 
-  handleSubmit(e) {
-    e.preventDefault()
-    this.props.onComplete(this.state)
-    this.setState({ task: '' })
-  }
-
   render() {
-
-
+    let buttonText = this.props.task ? 'Update Task' : 'Add Task'
     return (
       <form
         className='task-form'
@@ -35,11 +43,12 @@ class TaskForm extends React.Component {
           type='text'
           name='task'
           placeholder='To Do'
+          step='any'
           value={this.state.task}
           onChange={this.handleChange}
         />
 
-        <button type='submit'>Add Task</button>
+        <button type='submit'>{buttonText}</button>
       </form>
     )
 
