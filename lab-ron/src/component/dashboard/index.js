@@ -3,6 +3,8 @@ import uuid from 'uuid/v1'
 import TaskForm from '../task-form'
 import TaskList from '../task-list'
 
+
+
 class Dashboard extends React.Component {
   constructor(props) {
     super(props)
@@ -22,13 +24,10 @@ class Dashboard extends React.Component {
       completed: false,
       id: uuid(),
     }
-
     this.setState(prevState => ({
       tasks: [...prevState.tasks, result],
     }))
   }
-
-
 
   updateTask(task) {
     this.setState(({ tasks }) => ({

@@ -2,6 +2,7 @@ import React from 'react'
 
 let emptyState = {
   task: '',
+  comment: '',
 }
 
 class TaskForm extends React.Component {
@@ -43,9 +44,18 @@ class TaskForm extends React.Component {
         <input
           type='text'
           name='task'
-          placeholder='To Do'
+          placeholder='Task'
           step='any'
           value={this.state.task}
+          onChange={this.handleChange}
+        />
+
+        <input
+          type='text'
+          name='comment'
+          placeholder='comment'
+          step='any'
+          value={this.state.comment}
           onChange={this.handleChange}
         />
 

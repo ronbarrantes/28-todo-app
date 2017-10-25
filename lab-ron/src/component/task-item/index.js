@@ -16,7 +16,8 @@ class TaskItem extends React.Component {
 
     return (
       <li className='task-item'>
-        <p>{task.task}</p>
+        <p>Task: {task.task}</p>
+        <p>Comments: {task.comment}</p>
         <button onClick={showEdit}>Update</button>
         <button onClick={() => removeTask(task)}>Remove</button>
 
