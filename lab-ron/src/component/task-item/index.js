@@ -15,14 +15,14 @@ class TaskItem extends React.Component {
     }
 
     return (
-      <li className='task-item'>
+      <li className='task-item' onDoubleClick={showEdit}>
         <p>Task: {task.task}</p>
         <p>Comments: {task.comment}</p>
-        <button onClick={showEdit}>Update</button>
+        <button onClick={showEdit} >Update</button>
         <button onClick={() => removeTask(task)}>Remove</button>
 
         <Modal onClose={hideEdit} show={task.editing}>
-          <h1>Editing Mode</h1>
+          <h2>Editing Mode</h2>
           <TaskForm onComplete={updateAndClose} task={task} />
         </Modal>
       </li>

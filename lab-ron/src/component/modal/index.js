@@ -20,12 +20,11 @@ let modalMainStyles = {
 
 class Modal extends React.Component {
   render() {
-    console.log(this.props.children)
     return (
       <div style={modalStyles(this.props)} className='modal'>
-        <button onClick={this.props.onClose}> close </button>
         <main style={modalMainStyles}>
           {this.props.children}
+          <button onClick={this.props.onClose}> close </button>
         </main>
       </div>
     )

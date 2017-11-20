@@ -3,8 +3,6 @@ import uuid from 'uuid/v1'
 import TaskForm from '../task-form'
 import TaskList from '../task-list'
 
-
-
 class Dashboard extends React.Component {
   constructor(props) {
     super(props)
