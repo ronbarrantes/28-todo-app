@@ -12,14 +12,30 @@ class Dashboard extends React.Component {
 
     this.addTask = this.addTask.bind(this)
     this.removeTask = this.removeTask.bind(this)
+    this.updateTask = this.updateTask.bind(this)
   }
 
   addTask(task) {
-    task.created = new Date()
-    task.completed = false
-    task.id = uuid()
+    let result = {
+      ...task,
+      created: new Date(),
+      completed: false,
+      id: uuid(),
+    }
     this.setState(prevState => ({
-      tasks: [...prevState.tasks, task],
+      tasks: [...prevState.tasks, result],
+    }))
+  }
+
+  updateTask(task) {
+    this.setState(({ tasks }) => ({
+      tasks: tasks.map(item => item.id === task.id ? task : item),
+    }))
+  }
+
+  removeTask(task) {
+    this.setState(prevState => ({
+      tasks: prevState.tasks.filter(item => task.id !== item.id),
     }))
   }
 
@@ -27,20 +43,15 @@ class Dashboard extends React.Component {
     console.log('__STATE__:', this.state)
   }
 
-  removeTask(task) {
-    // this.state = task.filter()
-    console.log({ task })
-
-    this.setState(prevState => ({
-      tasks: prevState.tasks.filter(item => task.id !== item.id),
-    }))
-  }
-
   render() {
     return (
-      <div>
+      <div className='dashboard'>
         <TaskForm onComplete={this.addTask} />
-        <TaskList tasks={this.state.tasks} removeTask={this.removeTask} />
+        <TaskList
+          tasks={this.state.tasks}
+          removeTask={this.removeTask}
+          updateTask={this.updateTask}
+        />
       </div>
     )
   }
